@@ -1,6 +1,7 @@
 import {test, expect} from '@playwright/test'
 import { PageManager } from '../page-objects/pageManager'
 import { faker } from '@faker-js/faker'
+import { argosScreenshot } from "@argos-ci/playwright";
 // import { NavigationPage } from '../page-objects/navigationPage'
 // import { FormLayoutsPage } from '../page-objects/formLayoutsPage'
 // import { DatepickerPage } from '../page-objects/datepickerPage'
@@ -13,10 +14,15 @@ test('navigate to form page @smoke', async({page}) => {
     const pm = new PageManager(page)
     // const navigateTo = new NavigationPage(page)
     await pm.navigateTo().formLayoutsPage()
+    await argosScreenshot(page, "formLayoutsPage");
     await pm.navigateTo().datepickerPage()
+    await argosScreenshot(page, "datepickerPage");
     await pm.navigateTo().smartTablePage()
+    await argosScreenshot(page, "smartTablePage");
     await pm.navigateTo().toastrPage()
+    await argosScreenshot(page, "toastrPage");
     await pm.navigateTo().tooltipPage()
+    await argosScreenshot(page, "tooltipPage");
 })
 
 
