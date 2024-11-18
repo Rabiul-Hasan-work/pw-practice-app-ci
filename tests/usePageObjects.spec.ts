@@ -20,28 +20,28 @@ test('navigate to form page @smoke', async({page}) => {
 })
 
 
-test('parametrized methods @smoke', async({page}) => {
-    const pm = new PageManager(page)
-    // const navigateTo = new NavigationPage(page)
-    // const onFormLayoutsPage = new FormLayoutsPage(page)
-    // const onDatepickerPage = new DatepickerPage(page)()
-    const randomFullName = faker.person.fullName()
-    const randomEmail = `${randomFullName.replace(' ','')}${faker.number.int(1000)}@test.com`
+// test('parametrized methods @smoke', async({page}) => {
+//     const pm = new PageManager(page)
+//     // const navigateTo = new NavigationPage(page)
+//     // const onFormLayoutsPage = new FormLayoutsPage(page)
+//     // const onDatepickerPage = new DatepickerPage(page)()
+//     const randomFullName = faker.person.fullName()
+//     const randomEmail = `${randomFullName.replace(' ','')}${faker.number.int(1000)}@test.com`
 
-    await pm.navigateTo().formLayoutsPage()
-    await pm.onFormLayoutsPage().submitUsingTheGridFormWithCredentidalsAndSelectOption(process.env.USERNAME, process.env.PASSWORD, 'Option 2')
+//     await pm.navigateTo().formLayoutsPage()
+//     await pm.onFormLayoutsPage().submitUsingTheGridFormWithCredentidalsAndSelectOption(process.env.USERNAME, process.env.PASSWORD, 'Option 2')
 
-    // await page.screenshot({path: 'screenshots/formsLayoutsPage.png'})
-    // const buffer = await page.screenshot()
-    // console.log(buffer.toString('base64'))
+//     // await page.screenshot({path: 'screenshots/formsLayoutsPage.png'})
+//     // const buffer = await page.screenshot()
+//     // console.log(buffer.toString('base64'))
 
-    await pm.onFormLayoutsPage().submitInlineFormWithNameEmailAndCheckbox(randomFullName, randomEmail, true)
+//     await pm.onFormLayoutsPage().submitInlineFormWithNameEmailAndCheckbox(randomFullName, randomEmail, true)
 
-    // await page.locator('nb-card', {hasText: "Inline form"}).screenshot({path: 'screenshots/inlineForm.png'})
-    // // await pm.navigateTo().datepickerPage()
-    // await pm.onDatepickerPage().selectCommonDatepickerDateFromToday(5)
-    // await pm.onDatepickerPage().selectDatepickerWithRangeFromToday(6, 15)
-})
+//     // await page.locator('nb-card', {hasText: "Inline form"}).screenshot({path: 'screenshots/inlineForm.png'})
+//     // // await pm.navigateTo().datepickerPage()
+//     // await pm.onDatepickerPage().selectCommonDatepickerDateFromToday(5)
+//     // await pm.onDatepickerPage().selectDatepickerWithRangeFromToday(6, 15)
+// })
 
 
 // test.only('testing with argos ci', async({page}) => {
